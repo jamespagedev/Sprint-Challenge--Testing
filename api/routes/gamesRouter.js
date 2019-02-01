@@ -57,7 +57,7 @@ router.post('/', (req, res) => {
   if (game.title && game.genre) {
     res.status(201).json(game);
   } else {
-    res.status(400).end();
+    res.status(422).end();
   }
 });
 
