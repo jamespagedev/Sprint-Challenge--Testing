@@ -26,12 +26,22 @@ const server = require('../../server.js');
       - Testcase: remove the game from database
 */
 
+// Testsuite
 describe('Testsuite: gamesRouter', () => {
+  // Testset
   describe('Testset: GET / Endpoint', () => {
+    // Testcase
     it('Testcase: should respond with status code 200 OK', async () => {
       let response = await request(server).get('/games');
 
       expect(response.status).toBe(200);
+    });
+
+    // Testcase
+    it('Testcase: should respond with array', async () => {
+      let response = await request(server).get('/games');
+
+      expect(response.type).toMatch(/array/i);
     });
   });
 });
