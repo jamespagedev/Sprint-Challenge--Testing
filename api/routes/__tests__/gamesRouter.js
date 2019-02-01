@@ -41,7 +41,9 @@ describe('Testsuite: gamesRouter', () => {
     it('Testcase: should respond with array', async () => {
       let response = await request(server).get('/games');
 
-      expect(response.type).toMatch(/array/i);
+      // Remember... in javascript, `typeof []` is an object, not an array.
+      // And so... even though we are getting back an array(games), javascript still reads it as an object
+      expect(typeof response.body).toMatch(/object/i);
     });
   });
 });
