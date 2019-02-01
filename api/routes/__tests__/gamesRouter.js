@@ -55,4 +55,20 @@ describe('Testsuite: gamesRouter', () => {
       expect(response.body).toHaveLength(6);
     });
   });
+
+  describe('Testset: GET / Endpoint', () => {
+    // Testcase
+    it('Testcase: should respond with status code 201', async () => {
+      const game = {
+        title: 'Pacman', // required
+        genre: 'Arcade', // required
+        releaseYear: 1980 // not required
+      };
+      let response = await request(server)
+        .post('/games')
+        .send(game);
+
+      expect(response.status).toBe(201);
+    });
+  });
 });
