@@ -83,5 +83,22 @@ describe('Testsuite: gamesRouter', () => {
 
       expect(response.status).toBe(201);
     });
+
+    // Testcase
+    it('Testcase: should respond with {game} that was added upon 201 code', async () => {
+      const game = {
+        title: 'Lunar Eternal Blue', // required
+        genre: 'sega-cd', // required
+        releaseYear: 1994 // not required
+      };
+      let response = await request(server)
+        .post('/games')
+        .send(game);
+
+      // id will automatically get added by database
+      expect(response.body.title).toBe(game.title);
+      expect(response.body.genre).toBe(game.genre);
+      expect(response.body.releaseYear).toBe(game.releaseYear);
+    });
   });
 });
