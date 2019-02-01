@@ -10,7 +10,7 @@ const server = require('../../server.js');
     - (MVP) Testset: POST / Endpoint
       - Testcase: should respond with status code 201
       - Testcase: [releaseYear missing] should respond with status code 201
-      - Testcase: should respond with * upon 201 code
+      - Testcase: should respond with {game} that was added upon 201 code
       - Testcase: [name missing] should respond with status code 422
       - Testcase: [genre missing] should respond with status code 422
     - (Integration/Stretch) Testset: post 3 games and gets a list of all 3 games
