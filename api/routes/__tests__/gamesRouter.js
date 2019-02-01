@@ -5,7 +5,7 @@ const server = require('../../server.js');
     - (MVP) Testset: GET / Endpoint
       - Testcase: should respond with status code 200 OK
       - Testcase: should respond with array
-      - Testcase: should check length of array as 3
+      - Testcase: should check length of array as 6
         - Note: array will be 0 once we implement the stretch to start with empty database
     - (MVP) Testset: POST / Endpoint
       - Testcase: should respond with status code 201
@@ -13,7 +13,7 @@ const server = require('../../server.js');
       - Testcase: should respond with * upon 201 code
       - Testcase: [name missing] should respond with status code 422
       - Testcase: [genre missing] should respond with status code 422
-    - (Integration/Stretch) Testset: post 5 games and gets a list of all 3 games
+    - (Integration/Stretch) Testset: post 3 games and gets a list of all 3 games
       - Testcase: post game
       - Testcase: post game
       - Testcase: post game
