@@ -70,5 +70,18 @@ describe('Testsuite: gamesRouter', () => {
 
       expect(response.status).toBe(201);
     });
+
+    // Testcase
+    it('Testcase: [releaseYear missing] should respond with status code 201', async () => {
+      const game = {
+        title: 'Pacman', // required
+        genre: 'Arcade' // required
+      };
+      let response = await request(server)
+        .post('/games')
+        .send(game);
+
+      expect(response.status).toBe(201);
+    });
   });
 });

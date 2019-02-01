@@ -53,7 +53,12 @@ router.get('/', async (req, res) => {
 // /games - adds a game to the list
 router.post('/', (req, res) => {
   const game = req.body;
-  res.status(201).json(game);
+
+  if (game.title && game.genre) {
+    res.status(201).json(game);
+  } else {
+    res.status(400).end();
+  }
 });
 
 /***************************************************************************************************
