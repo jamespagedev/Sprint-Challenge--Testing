@@ -13,7 +13,7 @@ const server = require('../../server.js');
       - Testcase: should respond with * upon 201 code
       - Testcase: [name missing] should respond with status code 422
       - Testcase: [genre missing] should respond with status code 422
-    - (Integration/Stretch) Testset: post 3 games and gets a list of all 3 games
+    - (Integration/Stretch) Testset: post 5 games and gets a list of all 3 games
       - Testcase: post game
       - Testcase: post game
       - Testcase: post game
