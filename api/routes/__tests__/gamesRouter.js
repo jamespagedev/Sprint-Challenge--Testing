@@ -100,5 +100,19 @@ describe('Testsuite: gamesRouter', () => {
       expect(response.body.genre).toBe(game.genre);
       expect(response.body.releaseYear).toBe(game.releaseYear);
     });
+
+    // Testcase
+    it('Testcase: [name missing] should respond with status code 422', async () => {
+      const game = {
+        genre: 'snes', // required
+        releaseYear: 1995 // not required
+      };
+      let response = await request(server)
+        .post('/games')
+        .send(game);
+
+      // id will automatically get added by database
+      expect(response.status).toBe(422);
+    });
   });
 });
