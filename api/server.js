@@ -23,7 +23,7 @@ server.get('/', (req, res) => {
 });
 
 const gamesRouter = require('./routes/gamesRouter.js');
-server.use('/api/games', gamesRouter);
+server.use('/games', gamesRouter);
 
 /***************************************************************************************************
  ********************************************* export(s) *******************************************
