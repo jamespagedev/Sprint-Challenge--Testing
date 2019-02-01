@@ -74,8 +74,8 @@ describe('Testsuite: gamesRouter', () => {
     // Testcase
     it('Testcase: [releaseYear missing] should respond with status code 201', async () => {
       const game = {
-        title: 'Pacman', // required
-        genre: 'Arcade' // required
+        title: 'Final Fantasy', // required
+        genre: 'nes' // required
       };
       let response = await request(server)
         .post('/games')
