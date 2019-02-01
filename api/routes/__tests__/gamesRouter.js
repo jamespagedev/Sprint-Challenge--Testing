@@ -102,10 +102,24 @@ describe('Testsuite: gamesRouter', () => {
     });
 
     // Testcase
-    it('Testcase: [name missing] should respond with status code 422', async () => {
+    it('Testcase: [title missing] should respond with status code 422', async () => {
       const game = {
         genre: 'snes', // required
         releaseYear: 1995 // not required
+      };
+      let response = await request(server)
+        .post('/games')
+        .send(game);
+
+      // id will automatically get added by database
+      expect(response.status).toBe(422);
+    });
+
+    // Testcase
+    it('Testcase: [genre missing] should respond with status code 422', async () => {
+      const game = {
+        title: 'Xenogears', // required
+        releaseYear: 1998 // not required
       };
       let response = await request(server)
         .post('/games')
