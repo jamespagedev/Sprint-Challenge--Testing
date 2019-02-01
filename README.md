@@ -25,8 +25,41 @@ In this challenge use `Test Driven Development` to build a RESTful API using Nod
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. In Jest, what are the differences between `describe()` and `it()` globals, and what are good uses for them?
+
+- describe() is for breaking down your test suite into components. You can even do nested describe() to break it down further into a Testsuite/Testset. This is good for doing integration tests.
+- test()/it() is for individual unit tests. They go within the body of describe() and are broken down as individual an Testcase.
+- Example:
+
+```
+describe('Testsuite: videogameModel', function() {
+  describe('Testset: add/getById/Edit/GetByName/Delete videogame', function() {
+    it('Testcase: adds a video game', function() { ... });
+    it('Testcase: gets videogame by id', function() { ... });
+    it('Testcase: edits videogame name', function() { ... });
+    it('Testcase: gets videogame by name', function() { ... });
+    it('Testcase: deletes the videogame', function() { ... });
+  });
+});
+```
+
 1. What is the point of `Test Driven Development`? What do you think about this approach?
+
+- The three laws of TDD:
+  - You are not allowed to write any production code unless it is to make a failing unit test pass.
+  - You are not allowed to write anymore of a unit test than is sufficient to fail; and compilation failures are failures.
+  - You are not allowed to write anymore production code than is sufficient to pass the one failing unit test.
+  - See the model I drew below to explain the TDD process:
+
+![TDD Model](https://i.imgur.com/QdKjPeX.png)
+
+- I think TDD is great if you know exactly what you are doing. It helps you define the structure of your code to have a lot less bugs in the future.
+- It's also nice to have this button you can press, so you don't have to worry about breaking code you wrote months ago.
+
 1. Mention three types of automated tests.
+
+- Unit Testing
+- Integration Testing
+- Snapshot Testing
 
 ## Project Set Up
 
